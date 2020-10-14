@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, FieldArray, reduxForm } from "redux-form";
-import RenderField from "../render-field/RenderField";
+import LearningField from "../render-field/LearningField";
 import SkillField from "../render-field/SkillField";
 
 const DynamicForm = ({ handleSubmit, pristine, reset, submitting }) => {
@@ -12,6 +12,10 @@ const DynamicForm = ({ handleSubmit, pristine, reset, submitting }) => {
       <FieldArray name='strength' component={SkillField} />
       <label htmlFor='attention'>Areas of Attention</label>
       <FieldArray name='attention' component={SkillField} />
+      <label htmlFor='learning'>
+        Accomodation for learning, including required Equipment
+      </label>
+      <FieldArray name='learning' component={LearningField} />
       <div>
         <button type='submit' disabled={submitting}>
           Submit
