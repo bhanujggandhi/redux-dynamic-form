@@ -2,6 +2,7 @@ import React from "react";
 import { Field, FieldArray, reduxForm } from "redux-form";
 import LearningField from "../render-field/LearningField";
 import SkillField from "../render-field/SkillField";
+import SubjectField from "../render-field/SubjectField";
 
 const DynamicForm = ({ handleSubmit, pristine, reset, submitting }) => {
   return (
@@ -16,6 +17,8 @@ const DynamicForm = ({ handleSubmit, pristine, reset, submitting }) => {
         Accomodation for learning, including required Equipment
       </label>
       <FieldArray name='learning' component={LearningField} />
+      <label htmlFor='subject'>Subjects</label>
+      <FieldArray name='subject' component={SubjectField} />
       <div>
         <button type='submit' disabled={submitting}>
           Submit
