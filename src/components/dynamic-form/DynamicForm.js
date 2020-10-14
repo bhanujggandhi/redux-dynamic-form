@@ -5,30 +5,52 @@ import LearningField from "../render-field/LearningField";
 import SkillField from "../render-field/SkillField";
 import SubjectField from "../render-field/SubjectField";
 
+import { Form, Button } from "react-bootstrap";
+
 const DynamicForm = ({ handleSubmit, pristine, reset, submitting }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor='skills'>Skills to Work Upon</label>
-      <FieldArray name='skills' component={SkillField} />
-      <label htmlFor='strength'>Areas of Strength</label>
-      <FieldArray name='strength' component={SkillField} />
-      <label htmlFor='attention'>Areas of Attention</label>
-      <FieldArray name='attention' component={SkillField} />
-      <label htmlFor='learning'>
-        Accomodation for learning, including required Equipment
-      </label>
-      <FieldArray name='learning' component={LearningField} />
-      <label htmlFor='subject'>Subjects</label>
-      <FieldArray name='subject' component={SubjectField} />
+    <Form className='mb-3' onSubmit={handleSubmit}>
+      <Form.Group>
+        <Form.Label htmlFor='skills'>Skills to Work Upon</Form.Label>
+        <FieldArray
+          class='d-inline-flex p-2'
+          name='skills'
+          component={SkillField}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label htmlFor='strength'>Areas of Strength</Form.Label>
+        <FieldArray name='strength' component={SkillField} />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label htmlFor='attention'>Areas of Attention</Form.Label>
+        <FieldArray name='attention' component={SkillField} />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label htmlFor='learning'>
+          Accomodation for learning, including required Equipment
+        </Form.Label>
+        <FieldArray name='learning' component={LearningField} />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label htmlFor='subject'>Subjects</Form.Label>
+        <FieldArray name='subject' component={SubjectField} />
+      </Form.Group>
       <div>
-        <button type='submit' disabled={submitting}>
+        <Button type='submit' disabled={submitting}>
           Submit
-        </button>
-        <button type='button' disabled={pristine || submitting} onClick={reset}>
+        </Button>
+        <Button
+          variant='warning'
+          className='float-right'
+          type='button'
+          disabled={pristine || submitting}
+          onClick={reset}
+        >
           Clear Values
-        </button>
+        </Button>
       </div>
-    </form>
+    </Form>
   );
 };
 

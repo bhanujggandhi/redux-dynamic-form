@@ -10,8 +10,8 @@ async function showResults(values) {
 
 function App() {
   return (
-    <div style={{ padding: 15 }}>
-      <h2>IEP - 2020-10-11</h2>
+    <div className='container'>
+      <h2 style={{ textAlign: "center" }}>IEP - 2020-10-11</h2>
       <DynamicForm onSubmit={showResults} />
     </div>
   );

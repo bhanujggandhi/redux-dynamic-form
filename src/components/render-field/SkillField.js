@@ -3,24 +3,29 @@ import { Field } from "redux-form";
 
 import RenderField from "./RenderField";
 
+import { Button } from "react-bootstrap";
+import { Trash } from "react-bootstrap-icons";
+
 const SkillField = ({ fields, meta: { touched, error, submitFailed } }) => {
   return (
     <ul>
       <li>
-        <button type='button' onClick={() => fields.push("")}>
+        <Button type='button' onClick={() => fields.push("")}>
           Add
-        </button>
+        </Button>
         {(touched || submitFailed) && error && <span>{error}</span>}
       </li>
       {fields.map((skill, index) => (
         <li key={index}>
-          <button
+          <Button
+            className='float-right'
             type='button'
+            variant='danger'
             title='Remove Member'
             onClick={() => fields.remove(index)}
           >
-            Remove #{index + 1}
-          </button>
+            <Trash />
+          </Button>
           <h4>#{index + 1}</h4>
           <Field
             name={skill}

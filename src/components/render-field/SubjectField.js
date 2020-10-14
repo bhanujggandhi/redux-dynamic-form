@@ -4,24 +4,29 @@ import { Field, FieldArray } from "redux-form";
 import LearningField from "./LearningField";
 import RenderField from "./RenderField";
 
+import { Button } from "react-bootstrap";
+import { Trash } from "react-bootstrap-icons";
+
 const SubjectField = ({ fields, meta: { touched, error, submitFailed } }) => {
   return (
     <ul>
       <li>
-        <button type='button' onClick={() => fields.push("")}>
+        <Button type='button' onClick={() => fields.push("")}>
           Add
-        </button>
+        </Button>
         {(touched || submitFailed) && error && <span>{error}</span>}
       </li>
       {fields.map((subject, index) => (
         <li key={index}>
-          <button
+          <Button
+            className='float-right'
             type='button'
+            variant='danger'
             title='Remove Subject'
             onClick={() => fields.remove(index)}
           >
-            Remove #{index + 1}
-          </button>
+            <Trash type='button' />
+          </Button>
           <h4>Subject #{index + 1}</h4>
           <Field
             name={`${subject}.subject`}
