@@ -1,5 +1,6 @@
 import React from "react";
-import { Field, FieldArray, reduxForm } from "redux-form";
+import { FieldArray, reduxForm } from "redux-form";
+
 import LearningField from "../render-field/LearningField";
 import SkillField from "../render-field/SkillField";
 import SubjectField from "../render-field/SubjectField";

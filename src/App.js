@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+
 import DynamicForm from "./components/dynamic-form/DynamicForm";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
