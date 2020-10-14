@@ -6,7 +6,7 @@ const SkillField = ({ fields, meta: { touched, error, submitFailed } }) => {
   return (
     <ul>
       <li>
-        <button type='button' onClick={() => fields.push({})}>
+        <button type='button' onClick={() => fields.push("")}>
           Add
         </button>
         {(touched || submitFailed) && error && <span>{error}</span>}
@@ -20,12 +20,12 @@ const SkillField = ({ fields, meta: { touched, error, submitFailed } }) => {
           >
             Remove #{index + 1}
           </button>
-          <h4>Skill #{index + 1}</h4>
+          <h4>#{index + 1}</h4>
           <Field
             name={skill}
             type='text'
             component={RenderField}
-            label='Skills'
+            label='Write here..'
           />
         </li>
       ))}

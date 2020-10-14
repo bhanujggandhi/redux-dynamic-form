@@ -7,7 +7,7 @@ const SubjectField = ({ fields, meta: { touched, error, submitFailed } }) => {
   return (
     <ul>
       <li>
-        <button type='button' onClick={() => fields.push({})}>
+        <button type='button' onClick={() => fields.push("")}>
           Add
         </button>
         {(touched || submitFailed) && error && <span>{error}</span>}

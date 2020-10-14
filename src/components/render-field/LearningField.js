@@ -31,7 +31,7 @@ const LearningField = ({ fields, meta: { touched, error, submitFailed } }) => {
             name={`${learning}.content`}
             type='text'
             component='textarea'
-            label='Content'
+            placeholder='Content'
           />
         </li>
       ))}
