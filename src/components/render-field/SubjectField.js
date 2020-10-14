@@ -23,7 +23,7 @@ const SubjectField = ({ fields, meta: { touched, error, submitFailed } }) => {
           </button>
           <h4>Subject #{index + 1}</h4>
           <Field
-            name={subject}
+            name={`${subject}.subject`}
             type='text'
             component={RenderField}
             label='Subject'
